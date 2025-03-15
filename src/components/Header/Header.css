@@ -1,0 +1,14 @@
+nav a.active{
+    text-decoration: underline;
+    color: green;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+nav{
+    list-style: none;
+}
