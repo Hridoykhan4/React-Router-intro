@@ -14,6 +14,8 @@ import Posts from "./components/Posts/Posts.jsx";
 import PostDetail from "./components/PostDetail/PostDetail.jsx";
 import axios from "axios";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
+import Countries from "./components/Countries/Countries.jsx";
+import CountryDetail from "./components/CountryDetail/CountryDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -65,10 +67,23 @@ const router = createBrowserRouter([
           const res = await axios.get(
             "https://jsonplaceholder.typicode.com/posts"
           );
-
           return res.data;
         },
         element: <Posts></Posts>,
+      },
+      {
+        path: "/countries",
+        loader: async () => {
+          const res = await axios.get("https://restcountries.com/v3.1/all");
+          return res.data;
+        },
+        element: <Countries></Countries>,
+      },
+      {
+        path: "/country/:countryCode",
+        loader: ({ params }) =>
+          fetch(`https://restcountries.com/v3.1/alpha/${params.countryCode}`),
+        element: <CountryDetail></CountryDetail>,
       },
     ],
   },

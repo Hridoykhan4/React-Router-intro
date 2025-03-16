@@ -1,14 +1,13 @@
-nav a.active{
-    text-decoration: underline;
-    color: green;
-    color: white;
+nav a.active {
+  text-decoration: underline;
+  color: gold;
 }
 
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
-nav{
-    list-style: none;
+nav {
+  list-style: none;
 }

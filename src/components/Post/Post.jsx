@@ -9,21 +9,23 @@ const Post = ({ post }) => {
     flexDirection: "column",
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleShowPost = () => {
-    navigate(`/post/${post.id}`)
-  }
+    navigate(`/post/${post.id}`);
+  };
 
   return (
     <div style={postStyle}>
       <p>Post of Id: {post.id}</p>
-      <h2 style={{flexGrow: '1'}}>{post.title}</h2>
+      <h2 style={{ flexGrow: "1" }}>{post.title}</h2>
       <Link to={`/post/${post.id}`}>
-        <button to={`/post/${post.id}`}>Post Detail</button>
+        <button>Post Detail</button>
       </Link>
-    <br />
-      <button onClick={handleShowPost} style={{alignSelf:'center'}}>Show Post Details</button>
+      <br />
+      <button onClick={handleShowPost} style={{ alignSelf: "center" }}>
+        Show Post Details
+      </button>
     </div>
   );
 };

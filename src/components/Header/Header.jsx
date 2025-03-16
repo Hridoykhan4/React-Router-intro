@@ -24,6 +24,9 @@ const Header = () => {
         <li>
           <NavLink to={`/comments`}>Comments</NavLink>{" "}
         </li>
+        <li>
+          <NavLink to="/countries">Countries</NavLink>
+        </li>
       </nav>
     </div>
   );
